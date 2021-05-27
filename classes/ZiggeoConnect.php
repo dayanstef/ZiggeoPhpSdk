@@ -34,12 +34,12 @@ Class ZiggeoConnect {
                 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             }
 
-            curl_setopt($curl, CURLOPT_PROXY, config('CURLOPT_PROXY', false)); // '127.0.0.1:8080'
-            curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('CURLOPT_PROXYUSERPWD', false)); // 'user:password'
+            curl_setopt($curl, CURLOPT_PROXY, config('curl.proxy', false)); // '127.0.0.1:8080'
+            curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('curl.proxy_user_pwd', false)); // 'user:password'
 
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, config('CURLOPT_SSL_VERIFYPEER', true)); // boolean
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, config('curl.ssl_verify_peer', true)); // boolean
             //curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, $this->config->get("request_timeout"));
             //curl_setopt($curl, CURLOPT_TIMEOUT, $this->config->get("request_timeout"));
 
