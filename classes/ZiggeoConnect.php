@@ -34,12 +34,12 @@ Class ZiggeoConnect {
                 curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
             }
 
-            if (config('curl.proxy')) {
-                curl_setopt($curl, CURLOPT_PROXY, config('curl.proxy', false));
+            if (config('curl.proxy') !== false) {
+                curl_setopt($curl, CURLOPT_PROXY, config('curl.proxy'));
             }
 
-            if (config('curl.proxy_user_pwd')) {
-                curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('curl.proxy_user_pwd', false));
+            if (config('curl.proxy_user_pwd') !== false) {
+                curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('curl.proxy_user_pwd'));
             }
 
             curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, config('curl.ssl_verify_peer', true));
@@ -87,12 +87,12 @@ Class ZiggeoConnect {
             curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
         }
 
-        if (config('curl.proxy')) {
-            curl_setopt($curl, CURLOPT_PROXY, config('curl.proxy', false));
+        if (config('curl.proxy') !== false) {
+            curl_setopt($curl, CURLOPT_PROXY, config('curl.proxy'));
         }
 
-        if (config('curl.proxy_user_pwd')) {
-            curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('curl.proxy_user_pwd', false));
+        if (config('curl.proxy_user_pwd') !== false) {
+            curl_setopt($curl, CURLOPT_PROXYUSERPWD, config('curl.proxy_user_pwd'));
         }
 
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, config('curl.ssl_verify_peer', true));
